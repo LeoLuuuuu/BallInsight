@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+pymysql
+requests
+jieba
+whoosh
+snownlp
+scikit-learn
+numpy
+python-docx

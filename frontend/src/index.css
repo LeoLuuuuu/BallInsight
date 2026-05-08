@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #020617;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Whoosh highlight tags */
+.match {
+  color: #f59e0b;
+  font-weight: 600;
+  background-color: rgba(245, 158, 11, 0.12);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   Stadium Pitch animations
+   ═══════════════════════════════════════════ */
+
+/* Gold sweep across cards on hover */
+@keyframes gold-sweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Pitch stripe breathing */
+@keyframes pitch-breathe {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.55; }
+}
+
+/* Score badge pulse */
+@keyframes score-pulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(245, 158, 11, 0.3); }
+  50% { box-shadow: 0 0 14px rgba(245, 158, 11, 0.6); }
+}
+
+/* Staggered card entrance */
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Center circle glow */
+@keyframes circle-glow {
+  0%, 100% { border-color: rgba(245, 158, 11, 0.1); box-shadow: 0 0 20px rgba(245, 158, 11, 0.03); }
+  50% { border-color: rgba(245, 158, 11, 0.25); box-shadow: 0 0 40px rgba(245, 158, 11, 0.08); }
+}
+
+/* Live pulse dot */
+@keyframes live-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.6); }
+}
+
+/* Header glow line */
+@keyframes header-glow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Stadium floodlight sweep */
+@keyframes floodlight {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Scoreboard number tick */
+@keyframes number-tick {
+  0% { transform: translateY(-2px); opacity: 0.6; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Grass blade sway */
+@keyframes grass-sway {
+  0%, 100% { transform: skewX(0deg); }
+  25% { transform: skewX(0.5deg); }
+  75% { transform: skewX(-0.5deg); }
+}
+
+/* ── Utility classes ── */
+
+.animate-card-rise {
+  animation: card-rise 0.5s ease-out forwards;
+}
+
+.animate-score-pulse {
+  animation: score-pulse 2s ease-in-out infinite;
+}
+
+.pitch-stripe {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(16, 185, 129, 0.04) 0px,
+    rgba(16, 185, 129, 0.04) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+}
+
+.pitch-grid {
+  background-image:
+    linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Gold shimmer overlay */
+.gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.06), transparent);
+  transition: left 0.6s ease;
+}
+
+.gold-shimmer:hover::after {
+  left: 200%;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.25);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.45);
+}

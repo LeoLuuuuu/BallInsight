@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+
+# Virtual environment
+.venv/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+.superpowers/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Whoosh index (rebuildable)
+backend/index_dir/
+data_pipeline/news_index/
+
+# Scraped data (regeneratable)
+data_pipeline/clean_football_news.json
+
+# Office temp files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Environment
+.env
+.env.local
